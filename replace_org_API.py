@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, Query
 from supp_adel import ConnectionFactory
 from enum import Enum
 from config import (
-    DB_ORGANIZATION, DB_CATALOG, DB_CONTRACT, DB_SECTIONKS,
+    DB_ORGANIZATION, DB_CATALOG, DB_CONTRACT, DB_SECTION,
     DB_EA21, DB_EZT, DB_EOK, DB_EZK21, DB_OKB20,
     PROD, HOST, PORT,
 )
@@ -32,8 +32,8 @@ table_44catalog_catalog_contract = connect_44catalog.get_table('catalog_contract
 connect_contract_44 = cf.get_connection(DB_CONTRACT, prod=PROD)
 table_44contract = connect_contract_44.get_table('contract')
 
-# Секции (sectionks)
-connect_sectionks = cf.get_connection(DB_SECTIONKS)
+# Секции (section)
+connect_sectionks = cf.get_connection(DB_SECTION)
 sectionks_organization_table = connect_sectionks.get_table('organization')
 
 # Площадки
